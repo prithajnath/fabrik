@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Clothing
 
 import requests
 import json
@@ -11,5 +12,8 @@ def located():
 
 
 def index(request):
-    location = located()
-    return render(request, 'clothes/index.html', {'location' : location})
+    closet = Clothing.objects.all()
+    return render(request, 'clothes/index.html', {'closet' : closet})
+
+def add(request):
+    return render(request, 'clothes/add.html')
