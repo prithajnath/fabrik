@@ -12,7 +12,11 @@ model = app.models.get('e0be3b9d6a454f0493ac3a30784001ff')
 #Takes a URL in text, returns the response as a string
 #This function is the main part of this code, use it to format any clarifai API response
 def clarify(urlstr):
-    x = ClImage(url = urlstr)
+    if 'http:' in urlstr:
+        x = ClImage(url = urlstr)
+    else:
+        x = app.inputs.create_image_from_filename(urlstr)
+    
     predictions = str(model.predict([x]))
     
     #Outputing the response string to a file and formatting it
@@ -36,5 +40,5 @@ def clarify(urlstr):
     result2 = result1[:result1.find(',')]
     return result2
 
-imageurl = str(input("Input a url:"))
+imageurl = str(input("Input a url or local file:"))
 print(clarify(imageurl))
