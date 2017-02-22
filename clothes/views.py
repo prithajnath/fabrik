@@ -2,15 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Clothing
 from .forms import ClothingForm
 
-import requests
-import json
 # Create your views here.
-
-def located():
-    address = requests.get('http://freegeoip.net/json/')
-    location = json.loads(address.text)
-    return location['city']
-
 
 def index(request):
     closet = Clothing.objects.all()
