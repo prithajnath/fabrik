@@ -14,7 +14,12 @@ def index(request):
     observation = owm.weather_at_place(location)
     w = observation.get_weather()
     current_temperature = w.get_temperature('fahrenheit')
-    return render(request, 'weather/index.html', {'location' : location, 'current_temperature' : current_temperature})
+    current_status = w.get_status()
+    return render(request, 'weather/index.html', {
+        'location' : location,
+        'current_temperature' : current_temperature,
+        'current_status' : current_status
+        })
 
 """
 from pyowm import OWM
