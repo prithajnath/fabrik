@@ -1,7 +1,14 @@
-Django==1.10.5
+appdirs==1.4.0
 clarifai==2.0.18
 configparser==3.5.0
+Django==1.10.5
 future==0.15.2
+gunicorn==19.6.0
 jsonschema==2.5.1
+olefile==0.44
+packaging==16.8
+Pillow==4.0.0
 pyowm==2.6.1
+pyparsing==2.1.10
 requests==2.11.1
+six==1.10.0

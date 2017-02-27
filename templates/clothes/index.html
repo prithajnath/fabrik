@@ -1,0 +1,13 @@
+{% extends '../base.html' %}
+
+{% block content %}
+
+<a href="add">Add Clothes</a>
+<a href="/">Home</a>
+
+{% for clothing in closet %}
+<h1>{{clothing}}</h1>
+<img src="{{clothing.image.url}}">
+{% endfor %}
+
+{% endblock %}
