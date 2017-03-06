@@ -17,7 +17,7 @@ def index(request):
     current_status = w.get_status()
     return render(request, 'weather/index.html', {
         'location' : location,
-        'current_temperature' : current_temperature,
+        'current_temperature' : current_temperature['temp'],
         'current_status' : current_status
         })
 

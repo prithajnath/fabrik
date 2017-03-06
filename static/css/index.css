@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.material-icons {
+  color: white;
+}
+
+.mdl-button {
+  margin: 10px;
+}

@@ -1,13 +1,37 @@
-{% extends '../base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-{{location}}
-{{current_temperature}}
-{{current_status}}
+<!-- Weather information below -->
+<div class="row">
+{% if current_status == 'Clear' %}
+<div class="icon sunny">
+  <div class="sun">
+  </div>
+</div>
+{% endif %}
 
-<a href="/closet">Closet</a>
-<a href="/login">Login</a>
-<a href="/register">Register</a>
+<h1>{{location}}</h1>
+<h2>Current Temperature: {{current_temperature}}</h2>
+
+<!-- User information below -->
+<!-- Navigation below -->
+
+<div class="row">
+<!-- Look at recommendations -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <a href="/"><i class="material-icons">favorite</i></a>
+</button>
+
+<!-- Go to closet -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+  <a href="/"><i class="material-icons">dashboard</i></a>
+</button>
+
+<!-- Create new recommendations -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <a href="/closet"><i class="material-icons">library_add</i></a>
+</button>
+</div>
 
 {% endblock %}
