@@ -46,7 +46,7 @@ def add(request):
     if request.method == 'POST':
         form = ClothingForm(request.POST, request.FILES)
         if form.is_valid():
-            tag = clarify(form.fields['image'])
+            tag = clarify(str(form.fields['image']))
             form['clothing_type']=tag.name
             form.save()
             return redirect('index')
