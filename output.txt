@@ -1,0 +1,33 @@
+{u'status': {u'code': 10000, u'description': u'Ok'}
+, u'outputs': [{u'status': {u'code': 10000, u'description': u'Ok'}
+, u'created_at': u'2017-03-08T17:23:30.947218Z', u'input': {u'data': {u'image': {u'url': u'https://s3.amazonaws.com/clarifai-api/img/prod/f30c034db46a4ab1b7065e4f48272461/da828d7b1f7e4bd9b07a1de9c4b1b34f.png'}
+}
+, u'id': u'de00f8968aa64611865dbd8c28738108'}
+, u'model': {u'name': u'apparel', u'output_info': {u'type_ext': u'concept', u'message': u'Show output_info with: GET /models/{model_id}
+/output_info', u'type': u'concept'}
+, u'created_at': u'2016-12-20T22:43:29.831402Z', u'app_id': None, u'model_version': {u'status': {u'code': 21100, u'description': u'Model trained successfully'}
+, u'created_at': u'2016-12-20T22:43:29.831402Z', u'id': u'dc2cd6d9bff5425a80bfe0c4105583c1'}
+, u'id': u'e0be3b9d6a454f0493ac3a30784001ff'}
+, u'data': {u'concepts': [{u'app_id': None, u'id': u'ai_FvtbNF9R', u'value': 0.985806, u'name': u"Men's Watch"}
+, {u'app_id': None, u'id': u'ai_TnKmjfVN', u'value': 0.81894433, u'name': u"Women's Watch"}
+, {u'app_id': None, u'id': u'ai_4NsJqZTB', u'value': 0.5469054, u'name': u'Ring'}
+, {u'app_id': None, u'id': u'ai_X4lJmXLd', u'value': 0.42098582, u'name': u"Men's Hat"}
+, {u'app_id': None, u'id': u'ai_14DHBZb8', u'value': 0.21556798, u'name': u'Sweatshirt'}
+, {u'app_id': None, u'id': u'ai_dH6TJgzn', u'value': 0.2105288, u'name': u'Laptop Bag'}
+, {u'app_id': None, u'id': u'ai_BLfFZ64p', u'value': 0.20158643, u'name': u'Satchel'}
+, {u'app_id': None, u'id': u'ai_wtnFnM8F', u'value': 0.17840755, u'name': u"Men's Underwear"}
+, {u'app_id': None, u'id': u'ai_nVG9jntC', u'value': 0.15319774, u'name': u'Capris'}
+, {u'app_id': None, u'id': u'ai_Rq009GMW', u'value': 0.14727381, u'name': u"Women's Shorts"}
+, {u'app_id': None, u'id': u'ai_g4lr4XWF', u'value': 0.083404034, u'name': u'Fleece Jacket'}
+, {u'app_id': None, u'id': u'ai_zLQ06vpb', u'value': 0.069728434, u'name': u"Men's Shorts"}
+, {u'app_id': None, u'id': u'ai_xMKJC6lN', u'value': 0.053723477, u'name': u'Panties'}
+, {u'app_id': None, u'id': u'ai_W5HG8nS7', u'value': 0.05326876, u'name': u'Jeans'}
+, {u'app_id': None, u'id': u'ai_cjhVr9Tf', u'value': 0.047796898, u'name': u'Necklace'}
+, {u'app_id': None, u'id': u'ai_SGXgBwzJ', u'value': 0.046372507, u'name': u'Sneakers'}
+, {u'app_id': None, u'id': u'ai_QMTdVP1h', u'value': 0.045471247, u'name': u'Gloves'}
+, {u'app_id': None, u'id': u'ai_BK6xHcfw', u'value': 0.04438772, u'name': u'Hoodies'}
+, {u'app_id': None, u'id': u'ai_hlBWBcP8', u'value': 0.03408984, u'name': u"Men's Boots"}
+, {u'app_id': None, u'id': u'ai_2fQ7dxwC', u'value': 0.03369602, u'name': u'Tube Top'}
+]}
+, u'id': u'de00f8968aa64611865dbd8c28738108'}
+]}
