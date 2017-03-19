@@ -3,12 +3,15 @@
 {% block content %}
 
 <!-- Weather information below -->
+<!-- {{current_status}} -->
 <div class="row">
 {% if current_status == 'Clear' %}
 <div class="icon sunny">
   <div class="sun">
   </div>
 </div>
+<h1 class="status">{{current_status}}</h1>
+{% elif current_status == 'sunny' %}
 {% endif %}
 
 <h1>{{location}}</h1>

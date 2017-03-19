@@ -20,5 +20,5 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     url(r'^closet/', include('clothes.urls')),
     url(r'^$', include('weather.urls')),
-    url(r'^login/$', auth_views.login),
+    url(r'^user/', include('user.urls')),
 ]
