@@ -2,6 +2,15 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+   <p>hello</p>
+   <p>welcome {{ user.first_name }}</p>
+   <p><a href="/logout">Logout</a></p>
+{% else %}
+   <p><a href="/login">Login</a></p>
+   <p><a href="/register">Register</a></p>
+{% endif %}
+
 <!-- Weather information below -->
 <!-- {{current_status}} -->
 <div class="row">

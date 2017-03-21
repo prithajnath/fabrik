@@ -1,28 +1,31 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
 from django import forms
-from .forms import RegisterForm
-from .models import Profile
+from .forms import UserForm
 
 # Create your views here.
 
 def register(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
-            userObj = form.cleaned_data
-            username = userObj['username']
-            password = userObj['password']
-            email = userObj['email']
-            fname = userObj['first_name']
-            location = userObj['location']
+            data = form.cleaned_data
+            username = data['username']
+            password = data['password']
+            email = data['email']
+            first_name = data['first_name']
             if not (User.objects.filter(username=username).exists() or User.objects.filter(email=email).exists()):
-                User.objects.create_user(username, email, password)
-                p = Profile(first_name=fname, location=location )
-                p.save()
-
-            else:
-                raise forms.ValidationError('Username or email has been taken!')
+                x = User.objects.create_user(username = username, password = password, email = email)
+                x.first_name = first_name
+                x.save()
+                user = authenticate(username = username, password = password)
+                login(request, user)
+                return HttpResponseRedirect('/')
+        else:
+            raise forms.ValidationError('Username or email has been taken already!')
     else:
-        form = RegisterForm()
-    return render(request, 'user/register.html', {'form' : form})
+        user_form = UserForm()
+
+    return render(request, 'user/register.html', {'user_form' : user_form})

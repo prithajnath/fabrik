@@ -1,34 +1,25 @@
 from django import forms
+from .models import Profile
+from django.contrib.auth.models import User
 
-class RegisterForm(forms.Form):
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
 
-    first_name = forms.CharField(
-        required=True,
-        label='firstname',
-        max_length=32
-        )
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'first_name', 'email')
 
-    username = forms.CharField(
-        required=True,
-        label='username',
-        max_length=32
-        )
+class RegisterForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('location',)
 
-    email = forms.EmailField(
-        required=True,
-        label='email',
-        max_length=50
-        )
-
-    password = forms.CharField(
-        required=True,
-        label='password',
-        max_length=32,
-        widget=forms.PasswordInput()
-        )
-
-    location = forms.CharField(
-        required=True,
-        label='location',
-        max_length=32
-        )
+        """
+        def save(self):
+            data = self.cleaned_data
+            user = User(username = data['username'], password = data['password'],
+                    first_name = data['first_name'], email = data['email'])
+            user.save()
+            userProfile = Profile(user = user, location = data['location'])
+            userProfile.save()
+        """
