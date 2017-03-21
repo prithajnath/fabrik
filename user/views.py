@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django import forms
-from .forms import UserForm
+from .forms import UserForm, LocationForm
 
 # Create your views here.
 
@@ -29,3 +29,12 @@ def register(request):
         user_form = UserForm()
 
     return render(request, 'user/register.html', {'user_form' : user_form})
+
+def location(request):
+    if request.method == 'POST':
+        location_form = LocationForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect('/')
+    else:
+        location_form = LocationForm()
+    return render(request, 'user/location.html', {'location_form' : location_form})

@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 # Create your models here.
-class Profile(models.Model):
+class Location(models.Model):
 
     user = models.ForeignKey(User, null=True)
-    location = models.CharField(max_length=50)
+    latitude = models.FloatField(max_length=10, default=0)
+    longitude = models.FloatField(max_length=10, default=0)
+    home = models.BooleanField(default=True)

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<button onclick="getLocation()">Get Location</button>
+
+<form method="POST">
+  {% csrf_token %}
+
+  {{location_form.as_p}}
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<script>
+var x = document.getElementById("id_latitude");
+var y = document.getElementById("id_longitude");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.value = position.coords.latitude;
+    y.value = position.coords.longitude;
+}
+</script>
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile
+from .models import Location
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
@@ -9,10 +9,11 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'password', 'first_name', 'email')
 
-class RegisterForm(forms.ModelForm):
+class LocationForm(forms.ModelForm):
+
     class Meta:
-        model = Profile
-        fields = ('location',)
+        model = Location
+        fields = ('latitude', 'longitude', 'home')
 
         """
         def save(self):
