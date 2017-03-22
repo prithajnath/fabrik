@@ -15,17 +15,20 @@ def index(request):
     longitude to find the current weather using Open Weather Map's API and their
     weater_at_coords method which takes a latitude and longitude parameter.
     """
-    current_user = Location.objects.get(user = request.user.id)
-    latitude = current_user.latitude
-    longitude = current_user.longitude
+    if request.user.is_authenticated():
+        current_user = Location.objects.get(user = request.user.id)
+        latitude = current_user.latitude
+        longitude = current_user.longitude
 
-    owm = OWM(API_KEY)
-    observation = owm.weather_at_coords(latitude, longitude)
-    w = observation.get_weather()
-    current_temperature = w.get_temperature('fahrenheit')
-    current_status = w.get_status()
-    
-    return render(request, 'weather/index.html', {
-        'current_temperature' : current_temperature['temp'],
-        'current_status' : current_status
-        })
+        owm = OWM(API_KEY)
+        observation = owm.weather_at_coords(latitude, longitude)
+        w = observation.get_weather()
+        current_temperature = w.get_temperature('fahrenheit')
+        current_status = w.get_status()
+
+        return render(request, 'weather/index.html', {
+            'current_temperature' : current_temperature['temp'],
+            'current_status' : current_status
+            })
+    else:
+        return render(request, 'weather/index.html')
