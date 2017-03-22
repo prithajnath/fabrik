@@ -23,7 +23,7 @@ def register(request):
                 x.save()
                 user = authenticate(username = username, password = password)
                 login(request, user)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/user/location')
         else:
             raise forms.ValidationError('Username or email has been taken already!')
     else:

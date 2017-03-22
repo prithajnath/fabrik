@@ -19,6 +19,18 @@
     <div class="cloud"></div>
     <div class="cloud"></div>
   </div>
+  {% elif current_status == 'Clouds' %}
+  <div class="icon cloudy">
+    <div class="cloud"></div>
+  </div>
+  {% elif current_status == 'Snow' %}
+  <div class="icon flurries">
+    <div class="cloud"></div>
+    <div class="snow">
+      <div class="flake"></div>
+      <div class="flake"></div>
+    </div>
+  </div>
   {% endif %}
   <h2 class="status">The Current Status: {{current_status}}</h2>
   <h2>The Current Temperature: {{current_temperature}}°F</h2>
