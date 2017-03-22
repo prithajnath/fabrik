@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django import forms
 from .forms import UserForm, LocationForm
+from .models import Location
 
 # Create your views here.
 
@@ -33,7 +34,12 @@ def register(request):
 def location(request):
     if request.method == 'POST':
         location_form = LocationForm(request.POST)
-        if form.is_valid():
+        if location_form.is_valid():
+            data = location_form.cleaned_data
+            latitude = data['latitude']
+            longitude = data['longitude']
+            x = Location.objects.create(user=request.user, latitude = latitude, longitude = longitude)
+            x.save()
             return HttpResponseRedirect('/')
     else:
         location_form = LocationForm()
