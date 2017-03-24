@@ -35,29 +35,12 @@
   <h2 class="status">The Current Status: {{current_status}}</h2>
   <h2>The Current Temperature: {{current_temperature}}°F</h2>
 
-  <!-- Navigation below -->
-  <div class="row">
-  <!-- Look at recommendations -->
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <a href="/"><i class="material-icons">favorite</i><br></a>
-  </button>
-
-  <!-- Go to closet -->
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <a href="/"><i class="material-icons">dashboard</i></a>
-  </button>
-
-  <!-- Create new recommendations -->
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-      <a href="/closet"><i class="material-icons">library_add</i></a>
-  </button>
-  </div>
 
 <!-- Otherwise show them to login or register -->
 {% else %}
    <p>Please Login or Register to use the app.</p>
-   <p><a href="user/login">Login</a></p>
-   <p><a href="user/register">Register</a></p>
+   <p><a href="/login">Login</a></p>
+   <p><a href="/register">Register</a></p>
 {% endif %}
 
 {% endblock %}
