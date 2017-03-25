@@ -30,6 +30,7 @@ html, body {
 
 .weather h2 {
   z-index: 999;
+  position: absolute;
 }
 
 
