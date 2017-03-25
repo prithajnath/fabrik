@@ -8,32 +8,49 @@
 <!-- Weather information below -->
 
 <!-- {{current_status}} -->
-  <div class="row">
-  {% if current_status == 'Clear' %}
-  <div class="icon sunny">
-    <div class="sun">
+  <div class="weather">
+    <div class="container">
+    <div class="col-xs-6">
+    {% if current_status == 'Clear' %}
+    <div class="col-xs-12">
+    <div class="icon sunny">
+      <div class="sun">
+      </div>
     </div>
   </div>
-  {% elif current_status == 'Mist' %}
-  <div class="icon cloudy">
-    <div class="cloud"></div>
-    <div class="cloud"></div>
-  </div>
-  {% elif current_status == 'Clouds' %}
-  <div class="icon cloudy">
-    <div class="cloud"></div>
-  </div>
-  {% elif current_status == 'Snow' %}
-  <div class="icon flurries">
-    <div class="cloud"></div>
-    <div class="snow">
-      <div class="flake"></div>
-      <div class="flake"></div>
+    {% elif current_status == 'Mist' %}
+    <div class="col-xs-12">
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
     </div>
   </div>
-  {% endif %}
-  <h2 class="status">The Current Status: {{current_status}}</h2>
-  <h2>The Current Temperature: {{current_temperature}}°F</h2>
+    {% elif current_status == 'Clouds' %}
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+    </div>
+    {% elif current_status == 'Snow' %}
+    <div class="icon flurries">
+      <div class="cloud"></div>
+      <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+      </div>
+    </div>
+    {% elif current_status == 'Rain' %}
+    <div class="col-xs-12">
+    <div class="icon rainy">
+      <div class="cloud"></div>
+      <div class="rain"></div>
+    </div>
+  </div>
+    {% endif %}
+  </div>
+  <div class="col-xs-6">
+  <h2 class="status">Status: {{current_status}}</h2>
+  <h2 class="status">Temperature: {{current_temperature}}°F</h2>
+</div>
+</div>
 
 
 <!-- Otherwise show them to login or register -->

@@ -2,20 +2,38 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
-body {
-  background-color: gray;
+.col-xs-12 {
+  background-color: black;
 }
 
 .container-fluid {
   margin: 0 auto;
   text-align: center;
-  background-color: black;
   overflow-y:auto;
   height: 100vh;
 }
 
+.navbar {
+  width: 100%;
+  background-color: white;
+}
+
+.weather {
+  border: 1px solid red;
+  min-width: 50vw;
+  max-width: 100vw;
+  padding: 50px;
+}
+
+.weather h2 {
+  z-index: 999;
+}
+
+
+/*
 .container-fluid footer {
   position: fixed;
   bottom: 0;
@@ -26,3 +44,4 @@ footer nav {
   background-color: white;
   margin: 0 auto;
 }
+*/
