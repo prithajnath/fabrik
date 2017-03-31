@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'weather',
     'user',
     'django_s3_storage',
-    'bootstrap4',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
