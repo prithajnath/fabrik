@@ -4,7 +4,6 @@ from user.models import Location
 import requests
 import json
 import os
-from config import *
 
 API_KEY = os.environ.get('OWM')
 

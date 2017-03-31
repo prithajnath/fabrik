@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import sys
-
-sys.path.append(os.path.abspath("/home/secrets"))
-
-from config import *
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
