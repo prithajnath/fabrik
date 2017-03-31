@@ -54,9 +54,15 @@
 
 <!-- Otherwise show them to login or register -->
 {% else %}
-   <p>Please Login or Register to use the app.</p>
-   <p><a href="/login">Login</a></p>
-   <p><a href="/register">Register</a></p>
+  <h2>What is Fabrik?</h2>
+  <p>
+    Fabrik gets the user's current location and the current weather. From there,
+    the app will suggest what the user should wear for the day
+  </p>
+  <p>Please Login or Register to use the app.</p>
+
+  <a href="/login"><button class="btn btn-success">Login</button></a>
+  <button class="btn btn-danger"><a href="/register">Register</a></button>
 {% endif %}
 
 {% endblock %}

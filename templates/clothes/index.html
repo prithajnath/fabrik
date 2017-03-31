@@ -1,13 +1,12 @@
-{% extends '../base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-<a href="add">Add Clothes</a>
-<a href="/">Home</a>
-
 {% for clothing in closet %}
+<div class="col-xs-12">
 <h1>{{clothing}}</h1>
-<img src="{{clothing.image.url}}">
+<img src="{{clothing.image.url}}" class="img-responsive">
+</div class="col-xs-12">
 {% endfor %}
 
 {% endblock %}

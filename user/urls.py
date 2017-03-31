@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from django.contrib.auth import views as auth_views
 from user import views
 
 urlpatterns = [
-    url(r'^location/', views.location, name='location')
+    url(r'^location/', views.location, name='location'),
+    url(r'^profile/', views.profile, name='profile'),
+    url(r'^setting/', views.setting, name='setting')
 ]

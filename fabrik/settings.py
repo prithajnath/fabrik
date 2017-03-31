@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import sys
+
+sys.path.append(os.path.abspath("/home/secrets"))
+
+from config import *
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4zcf(=*#b)lj$)^ovkiov0%!z2!1li48ppf%=w&*#4ze-$^9w1'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +46,8 @@ INSTALLED_APPS = [
     'clothes',
     'weather',
     'user',
+    'django_s3_storage',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +125,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# The AWS region to connect to.
+AWS_REGION = "us-east-1"
+
+# The AWS access key to use
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+
+# The AWS secret access key to use.
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+AWS_S3_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -129,10 +148,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+DEFAULT_FILE_STORAGE = "django_s3_storage.storage.S3Storage"
+DEFAULT_S3_PATH = "media"
+MEDIA_ROOT = '/%s/' % DEFAULT_S3_PATH
+MEDIA_URL = '//s3.amazonaws.com/%s/media/' % AWS_S3_BUCKET_NAME
+'''
 MEDIA_URL = '/media/'
 MEDIA_ROOT = ''
 MEDIAFILES_DIRS = [
     os.path.join(BASE_DIR, 'media'),
 ]
+'''
 
 LOGIN_REDIRECT_URL = 'home'

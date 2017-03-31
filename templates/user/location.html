@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% load bootstrap4 %}
 
-<button onclick="getLocation()">Get Location</button>
+{% block content %}
 
 <form method="POST">
   {% csrf_token %}
-  {{location_form.as_p}}
-
-  <button type="submit">Submit</button>
-
+  {% bootstrap_form location_form %}
+  {% buttons %}
+      <button type="button" onclick="getLocation()" class="btn btn-success">
+        Get Location
+      </button>
+      <button type="submit" class="btn btn-primary">
+          Update
+      </button>
+  {% endbuttons %}
 </form>
 
 <script>

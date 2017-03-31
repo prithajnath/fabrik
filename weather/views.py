@@ -3,8 +3,10 @@ from pyowm import OWM
 from user.models import Location
 import requests
 import json
+import os
+from config import *
 
-API_KEY = '13d1090375aba1e54b0051ff825ab553'
+API_KEY = os.environ.get('OWM')
 
 # Create your views here.
 def index(request):
