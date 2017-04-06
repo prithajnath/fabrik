@@ -19,3 +19,4 @@ tests/report/
 venv/
 *.json
 *.sqlite3
+*.jpg

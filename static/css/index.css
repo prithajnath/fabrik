@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.col-xs-12 {
+  background-color: #fb9800;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  text-align: center;
+  overflow-y:auto;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #0082a5;
+}
+
+.weather {
+  min-width: 50vw;
+  max-width: 100vw;
+  padding: 50px;
+  background-color: #ff7f01;
+}
+
+.weather h2 {
+  z-index: 999;
+  position: absolute;
+}
+
+/*
+.container-fluid footer {
+  position: fixed;
+  bottom: 0;
+  height: 57px;
+}
+
+footer nav {
+  background-color: white;
+  margin: 0 auto;
+}
+*/
