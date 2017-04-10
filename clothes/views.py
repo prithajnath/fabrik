@@ -58,8 +58,6 @@ def add(request):
             name = data['name']
             clothing_type = data['clothing_type']
             image = data['image']
-            #tag = clarify(form.fields['image'].name)
-            #form['clothing_type']=tag
             x = Clothing.objects.create(
                 name = name,
                 image = image,
