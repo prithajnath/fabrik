@@ -1,4 +1,3 @@
-#! /usr/bin/env python3
 def tagsToTags(tag,flag):
     if(flag == 0):
     #body location functional tags
