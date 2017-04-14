@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from fabrik.settings import LOGIN_REDIRECT_URL
 
 #Jason's Clarifai Client ID, Client Secret
-'''
+
 app =  ClarifaiApp("wPXX8nSrRj_A25bqQAdAurGdZdbxzhJWELL9aaQ2","SRRlIyrXfV7bJkNE7R3naCBPkxw3J-UwqVgcxJhJ")
 #Model for Apparel Prediction
 model = app.models.get('e0be3b9d6a454f0493ac3a30784001ff')
@@ -40,7 +40,7 @@ def clarify(urlstr):
     result1 = result[(result.find('\'name\':')+7):]
     result2 = result1[:result1.find(',')]
     return result2
-'''
+
 # Create your views here.
 
 @login_required(login_url=LOGIN_REDIRECT_URL)
