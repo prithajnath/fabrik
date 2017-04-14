@@ -180,7 +180,4 @@ def tagsToTags(tag,flag):
         else:
             return 'ERROR: No Such Clothing Object in database.'
     else:
-        print('Bad Flag Value')
-
-x = input("Tag?")
-print(tagsToTags(x,0))
+        return 'Bad Flag Value'
