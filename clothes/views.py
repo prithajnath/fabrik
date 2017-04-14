@@ -7,7 +7,7 @@ from clarifai.rest import Image as ClImage
 from django.contrib.auth.decorators import login_required
 from fabrik.settings import LOGIN_REDIRECT_URL
 import base64
-
+from tagsToTags.py import tagsToTags
 #Jason's Clarifai Client ID, Client Secret
 app =  ClarifaiApp("wPXX8nSrRj_A25bqQAdAurGdZdbxzhJWELL9aaQ2","SRRlIyrXfV7bJkNE7R3naCBPkxw3J-UwqVgcxJhJ")
 #Model for Apparel Prediction
@@ -63,6 +63,8 @@ def add(request):
                 image = image,
                 clothing_type = clarify(image),
                 owned_by = request.user
+                fWeather = tagsToTags(clothing_type,1)
+                fTags = tagsToTags(clothing_type,0)
                 )
             form.save()
             return redirect('/')
