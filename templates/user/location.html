@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+
+<form method="POST">
+  {% csrf_token %}
+  {% bootstrap_form location_form %}
+  {% buttons %}
+      <button type="button" onclick="getLocation()" class="btn btn-success">
+        Get Location
+      </button>
+      <button type="submit" class="btn btn-primary">
+          Update
+      </button>
+  {% endbuttons %}
+</form>
+
+<script>
+var x = document.getElementById("id_latitude");
+var y = document.getElementById("id_longitude");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.value = position.coords.latitude;
+    y.value = position.coords.longitude;
+}
+</script>
+
+
+{% endblock %}

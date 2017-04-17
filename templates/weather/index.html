@@ -2,36 +2,67 @@
 
 {% block content %}
 
+<!-- If the user is authenticate it shows the main features of the app -->
+{% if user.is_authenticated %}
+   <h1>Hello {{ user.first_name }}!</h1>
 <!-- Weather information below -->
-<div class="row">
-{% if current_status == 'Clear' %}
-<div class="icon sunny">
-  <div class="sun">
+
+<!-- {{current_status}} -->
+  <div class="weather">
+    <div class="container">
+    <div class="col-xs-6">
+    {% if current_status == 'Clear' %}
+    <div class="col-xs-12">
+    <div class="icon sunny">
+      <div class="sun">
+      </div>
+    </div>
   </div>
+    {% elif current_status == 'Mist' %}
+    <div class="col-xs-12">
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+  </div>
+    {% elif current_status == 'Clouds' %}
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+    </div>
+    {% elif current_status == 'Snow' %}
+    <div class="icon flurries">
+      <div class="cloud"></div>
+      <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+      </div>
+    </div>
+    {% elif current_status == 'Rain' %}
+    <div class="col-xs-12">
+    <div class="icon rainy">
+      <div class="cloud"></div>
+      <div class="rain"></div>
+    </div>
+  </div>
+    {% endif %}
+  </div>
+  <div class="col-xs-6">
+  <h2 class="status">{{current_status}} {{current_temperature}}°F</h2>
 </div>
+</div>
+
+
+<!-- Otherwise show them to login or register -->
+{% else %}
+  <h2>What is Fabrik?</h2>
+  <p>
+    Fabrik gets the user's current location and the current weather. From there,
+    the app will suggest what the user should wear for the day
+  </p>
+  <p>Please Login or Register to use the app.</p>
+
+  <a href="/login"><button class="btn btn-success">Login</button></a>
+  <button class="btn btn-danger"><a href="/register">Register</a></button>
 {% endif %}
-
-<h1>{{location}}</h1>
-<h2>Current Temperature: {{current_temperature}}</h2>
-
-<!-- User information below -->
-<!-- Navigation below -->
-
-<div class="row">
-<!-- Look at recommendations -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-  <a href="/"><i class="material-icons">favorite</i></a>
-</button>
-
-<!-- Go to closet -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-  <a href="/"><i class="material-icons">dashboard</i></a>
-</button>
-
-<!-- Create new recommendations -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <a href="/closet"><i class="material-icons">library_add</i></a>
-</button>
-</div>
 
 {% endblock %}
