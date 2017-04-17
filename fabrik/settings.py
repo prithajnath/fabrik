@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'pythonanywhere.com', 'fabrik-mparmelee.c9users.io','se2fabrik.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'pythonanywhere.com', 'fabrik-mparmelee.c9users.io','se2fabrik.herokuapp.com','fabrikk-prithajnath.c9users.io']
 
 
 # Application definition
