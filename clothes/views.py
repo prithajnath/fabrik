@@ -27,22 +27,6 @@ def clarify(url):
     #return names[max(names)]
 
 #Categorizes a clothing tag to an appropriate weather season.
-
-<<<<<<< HEAD
-    #Takes the highest confidence line
-    fil = open('output.txt','r')
-    for line in fil:
-        if (('\'id\': \'ai' in line) == True):
-            result = line
-            print(line)
-            break
-
-    #Takes only the name
-    result1 = result[(result.find('\'name\':')+7):]
-    result2 = result1[:result1.find(',')]
-    return result2
-
-=======
 def tagsBySeason(name):
     if tagsToTags(name, 1) == 'snow':
         return 'winter'
@@ -58,8 +42,7 @@ def tagsBySeason(name):
         
     else:
         return 'N/A'
-    
->>>>>>> 15195c87dcb4bd865f567f319b1da2c61ef5813b
+
 # Create your views here.
 
 @login_required(login_url=LOGIN_REDIRECT_URL)
