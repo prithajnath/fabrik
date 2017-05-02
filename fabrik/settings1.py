@@ -21,11 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-=======
-#SECRET_KEY = os.environ.get('SECRET_KEY')
->>>>>>> 15195c87dcb4bd865f567f319b1da2c61ef5813b
-SECRET_KEY = '4zcf(=*#b)lj$)^ovkiov0%!z2!1li48ppf%=w&*#4ze-$^9w1'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,13 +124,12 @@ USE_TZ = True
 AWS_REGION = "us-east-1"
 
 # The AWS access key to use
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_ACCESS_KEY_ID = 'AKIAIZX6HHX5GMQURDCA'
-# The AWS secret access key to use.
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 
-#AWS_S3_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
-AWS_S3_BUCKET_NAME = 'se2fabrik'
+# The AWS secret access key to use.
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+AWS_S3_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
 
 
 # Static files (CSS, JavaScript, Images)

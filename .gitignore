@@ -20,3 +20,4 @@ venv/
 *.json
 *.sqlite3
 *.jpg
+settings.py
