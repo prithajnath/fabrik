@@ -1,181 +1,181 @@
 def tagsToTags(tag,flag):
     if(flag == 0):
     #body location functional tags
-        if(tag == '\'Gloves'):
+        if(tag == 'Gloves'):
             return 'hands'
-        if(tag == '\"Women\'s Boots'):
+        if(tag == 'Women\'s Boots'):
             return 'feet'
-        if(tag == '\'Blazer'):
+        if(tag == 'Blazer'):
             return 'torso'
-        if(tag == '\'Capris'):
+        if(tag == 'Capris'):
             return 'pants'
-        if(tag == '\'Leather Jacket'):
+        if(tag == 'Leather Jacket'):
             return 'torso'
-        if(tag == '\'Peacoat'):
+        if(tag == 'Peacoat'):
             return 'torso'
-        if(tag == '\'Sneakers'):
+        if(tag == 'Sneakers'):
             return 'feet'
-        if(tag == '\'Puffy Coat'):
+        if(tag == 'Puffy Coat'):
             return 'torso'
-        if(tag == '\"Men\'s Hat'):
+        if(tag == 'Men\'s Hat'):
             return 'head'
-        if(tag == '\'Bomber Jacket'):
+        if(tag == 'Bomber Jacket'):
             return 'torso'
-        if(tag == '\'Cocktail Dress'):
+        if(tag == 'Cocktail Dress'):
             return 'torso'
-        if(tag == '\'T-Shirt'):
+        if(tag == 'T-Shirt'):
             return 'torso'
-        if(tag == '\'Fleece Jacket'):
+        if(tag == 'Fleece Jacket'):
             return 'torso'
-        if(tag == '\'Kimonos'):
+        if(tag == 'Kimonos'):
             return 'torso'
-        if(tag == '\'Pumps'):
+        if(tag == 'Pumps'):
             return 'feet'
-        if(tag == '\'Cardigan'):
+        if(tag == 'Cardigan'):
             return 'torso'
-        if(tag == '\"Men\'s Dress Shoes'):
+        if(tag == 'Men\'s Dress Shoes'):
             return 'feet'
-        if(tag == '\"Men\'s Boots'):
+        if(tag == 'Men\'s Boots'):
             return 'feet'
-        if(tag == '\'Button-Down'):
+        if(tag == 'Button-Down'):
             return 'torso'
-        if(tag == '\'Robe'):
+        if(tag == 'Robe'):
             return 'torso'
-        if(tag == '\'Skinny Pants'):
+        if(tag == 'Skinny Pants'):
             return 'legs'
-        if(tag == '\'Sweatshirt'):
+        if(tag == 'Sweatshirt'):
             return 'torso'
-        if(tag == '\'Tights'):
+        if(tag == 'Tights'):
             return 'legs'
-        if(tag == '\'Raincoats'):
+        if(tag == 'Raincoats'):
             return 'torso'
-        if(tag == '\"Women\'s Hat'):
+        if(tag == 'Women\'s Hat'):
             return 'head'
-        if(tag == '\'Wide Leg Pants'):
+        if(tag == 'Wide Leg Pants'):
             return 'legs'
-        if(tag == '\'Polos'):
+        if(tag == 'Polos'):
             return 'torso'
-        if(tag == '\'Relaxed Pants'):
+        if(tag == 'Relaxed Pants'):
             return 'legs'
-        if(tag == '\'Denim Jacket'):
+        if(tag == 'Denim Jacket'):
             return 'torso'
-        if(tag == '\'Socks'):
+        if(tag == 'Socks'):
             return 'feet'
-        if(tag == '\'Hoodies'):
+        if(tag == 'Hoodies'):
             return 'torso'
-        if(tag == '\"Women\'s Sandals'):
+        if(tag == 'Women\'s Sandals'):
             return 'feet'
-        if(tag == '\'Platform Shoes'):
+        if(tag == 'Platform Shoes'):
             return 'feet'
-        if(tag == '\'Vest'):
+        if(tag == 'Vest'):
             return 'torso'
-        if(tag == '\'Spring Jacket'):
+        if(tag == 'Spring Jacket'):
             return 'torso'
-        if(tag == '\'Wristlet & Clutch'):
+        if(tag == 'Wristlet & Clutch'):
             return 'torso'
-        if(tag == '\'Tracksuit'):
+        if(tag == 'Tracksuit'):
             return 'torso'
-        if(tag == '\'Oxfords'):
+        if(tag == 'Oxfords'):
             return 'feet'
-        if(tag == '\"Men\'s Sandals'):
+        if(tag == 'Men\'s Sandals'):
             return 'feet'
-        if(tag == '\'Umbrella'):
+        if(tag == 'Umbrella'):
             return 'extra'
-        if(tag == '\'Loafers'):
+        if(tag == 'Loafers'):
             return 'feet'
-        if(tag == '\'Boat Shoes'):
+        if(tag == 'Boat Shoes'):
             return 'feet'
-        if(tag == '\'Overalls'):
+        if(tag == 'Overalls'):
             return 'legs'
         else:
             return 'ERROR: No Such Clothing Object in database.'
     elif(flag == 1):
     #Weather conditions functional tags
-        if(tag == '\'Gloves'):
+        if(tag == 'Gloves'):
             return 'snow'
-        if(tag == '\"Women\'s Boots'):
+        if(tag == 'Women\'s Boots'):
             return 'snow'
-        if(tag == '\'Blazer'):
+        if(tag == 'Blazer'):
             return 'chilly'
-        if(tag == '\'Capris'):
+        if(tag == 'Capris'):
             return 'sunny'
-        if(tag == '\'Leather Jacket'):
+        if(tag == 'Leather Jacket'):
             return 'chilly'
-        if(tag == '\'Peacoat'):
+        if(tag == 'Peacoat'):
             return 'snow'
-        if(tag == '\'Sneakers'):
+        if(tag == 'Sneakers'):
             return 'cold'
-        if(tag == '\'Puffy Coat'):
+        if(tag == 'Puffy Coat'):
             return 'cold'
-        if(tag == '\"Men\'s Hat'):
+        if(tag == 'Men\'s Hat'):
             return 'snow'
-        if(tag == '\'Bomber Jacket'):
+        if(tag == 'Bomber Jacket'):
             return 'chilly'
-        if(tag == '\'Cocktail Dress'):
+        if(tag == 'Cocktail Dress'):
             return 'sunny'
-        if(tag == '\'T-Shirt'):
+        if(tag == 'T-Shirt'):
             return 'sunny'
-        if(tag == '\'Fleece Jacket'):
+        if(tag == 'Fleece Jacket'):
             return 'cold'
-        if(tag == '\'Kimonos'):
+        if(tag == 'Kimonos'):
             return 'sunny'
-        if(tag == '\'Pumps'):
+        if(tag == 'Pumps'):
             return 'sunny'
-        if(tag == '\'Cardigan'):
+        if(tag == 'Cardigan'):
             return 'chilly'
-        if(tag == '\"Men\'s Dress Shoes'):
+        if(tag == 'Men\'s Dress Shoes'):
             return 'chilly'
-        if(tag == '\"Men\'s Boots'):
+        if(tag == 'Men\'s Boots'):
             return 'snow'
-        if(tag == '\'Button-Down'):
+        if(tag == 'Button-Down'):
             return 'cold'
-        if(tag == '\'Robe'):
+        if(tag == 'Robe'):
             return 'sunny'
-        if(tag == '\'Skinny Pants'):
+        if(tag == 'Skinny Pants'):
             return 'cold'
-        if(tag == '\'Sweatshirt'):
+        if(tag == 'Sweatshirt'):
             return 'cold'
-        if(tag == '\'Tights'):
+        if(tag == 'Tights'):
             return 'chilly'
-        if(tag == '\'Raincoats'):
+        if(tag == 'Raincoats'):
             return 'rain'
-        if(tag == '\"Women\'s Hat'):
+        if(tag == 'Women\'s Hat'):
             return 'cold'
-        if(tag == '\'Wide Leg Pants'):
+        if(tag == 'Wide Leg Pants'):
             return 'cold'
-        if(tag == '\'Polos'):
+        if(tag == 'Polos'):
             return 'chilly'
-        if(tag == '\'Relaxed Pants'):
+        if(tag == 'Relaxed Pants'):
             return 'chilly'
-        if(tag == '\'Denim Jacket'):
+        if(tag == 'Denim Jacket'):
             return 'chilly'
-        if(tag == '\'Socks'):
+        if(tag == 'Socks'):
             return 'any'
-        if(tag == '\'Hoodies'):
+        if(tag == 'Hoodies'):
             return 'cold'
-        if(tag == '\"Women\'s Sandals'):
+        if(tag == 'Women\'s Sandals'):
             return 'sunny'
-        if(tag == '\'Platform Shoes'):
+        if(tag == 'Platform Shoes'):
             return 'chilly'
-        if(tag == '\'Vest'):
+        if(tag == 'Vest'):
             return 'chilly'
-        if(tag == '\'Spring Jacket'):
+        if(tag == 'Spring Jacket'):
             return 'sunny'
-        if(tag == '\'Wristlet & Clutch'):
+        if(tag == 'Wristlet & Clutch'):
             return 'any'
-        if(tag == '\'Tracksuit'):
+        if(tag == 'Tracksuit'):
             return 'chilly'
-        if(tag == '\'Oxfords'):
+        if(tag == 'Oxfords'):
             return 'chilly'
-        if(tag == '\"Men\'s Sandals'):
+        if(tag == 'Men\'s Sandals'):
             return 'sunny'
-        if(tag == '\'Umbrella'):
+        if(tag == 'Umbrella'):
             return 'rain'
-        if(tag == '\'Loafers'):
+        if(tag == 'Loafers'):
             return 'chilly'
-        if(tag == '\'Boat Shoes'):
+        if(tag == 'Boat Shoes'):
             return 'chilly'
-        if(tag == '\'Overalls'):
+        if(tag == 'Overalls'):
             return 'snow'
         else:
             return 'ERROR: No Such Clothing Object in database.'

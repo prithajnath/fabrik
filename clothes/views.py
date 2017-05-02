@@ -24,28 +24,21 @@ def clarify(urlstr):
     return names[max(names)]
 #Categorizes a clothing tag to an appropriate weather season.
 
-def tagsBySeason(names):
-    seasonsList = []
-    for n in names:
-        if tagsToTags(n, 1) == 'snow':
-            seasonsList.append('winter')
-        elif tagsToTags(n, 1) == 'chilly':
-            seasonsList.append('fall', 'spring')
-        elif tagsToTags(n, 1) == 'sunny':
-            seasonsList.append('summer', 'spring')
-        elif tagsToTags(n, 1) == 'cold':
-            seasonsList.append('winter', 'fall')
-        elif tagsToTags(n, 1) == 'rain':
-            seasonsList.append('spring', 'fall')
-        elif tagsToTags(n, 1) == 'any':
-            seasonsList.append('winter', 'spring', 'summer', 'fall')
-        else:
-            return 'ERROR: Tag does not exist'
-    seasons = ''
-    for s in seasonsList:
-        seasons += s
-        seasons += ', '
-    return seasons[:-2]
+def tagsBySeason(name):
+    if tagsToTags(name, 1) == 'snow':
+        return 'winter'
+    elif tagsToTags(name, 1) == 'chilly':
+        return 'fall'
+    elif tagsToTags(name, 1) == 'sunny':
+        return 'summer'
+    elif tagsToTags(name, 1) == 'cold':
+        return 'winter'
+    elif tagsToTags(name, 1) == 'rain':
+        return 'spring'
+    #elif tagsToTags(name, 1) == 'any':
+        
+    else:
+        return 'N/A'
     
 # Create your views here.
 
