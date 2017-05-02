@@ -6,6 +6,7 @@ from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 from django.contrib.auth.decorators import login_required
 from fabrik.settings import LOGIN_REDIRECT_URL
+from .tagsToTags import tagsToTags
 
 #Jason's Clarifai Client ID, Client Secret
 
@@ -17,11 +18,35 @@ model = app.models.get('e0be3b9d6a454f0493ac3a30784001ff')
 #This function is the main part of this code, use it to format any clarifai API response
 def clarify(urlstr):
     x = app.inputs.create_image_from_filename(urlstr)
-
-    names = []
+    names = {}
     for i in model.predict([x])['outputs'][0]['data']['concepts']:
-        names.append(i['name'])
-    return names
+        names[i['value']]=i['name']
+    return names[max(names)]
+#Categorizes a clothing tag to an appropriate weather season.
+
+def tagsBySeason(names):
+    seasonsList = []
+    for n in names:
+        if tagsToTags(n, 1) == 'snow':
+            seasonsList.append('winter')
+        elif tagsToTags(n, 1) == 'chilly':
+            seasonsList.append('fall', 'spring')
+        elif tagsToTags(n, 1) == 'sunny':
+            seasonsList.append('summer', 'spring')
+        elif tagsToTags(n, 1) == 'cold':
+            seasonsList.append('winter', 'fall')
+        elif tagsToTags(n, 1) == 'rain':
+            seasonsList.append('spring', 'fall')
+        elif tagsToTags(n, 1) == 'any':
+            seasonsList.append('winter', 'spring', 'summer', 'fall')
+        else:
+            return 'ERROR: Tag does not exist'
+    seasons = ''
+    for s in seasonsList:
+        seasons += s
+        seasons += ', '
+    return seasons[:-2]
+    
 # Create your views here.
 
 @login_required(login_url=LOGIN_REDIRECT_URL)
@@ -42,7 +67,7 @@ def add(request):
             #form['clothing_type']=tag
             x = Clothing.objects.create(
                 name = name,
-                clothing_type = clothing_type,
+                clothing_type = tagsBySeason(clarify(image)),
                 image = image,
                 owned_by = request.user
                 )
