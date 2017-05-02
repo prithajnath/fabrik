@@ -5,7 +5,8 @@ import requests
 import json
 import os
 
-API_KEY = os.environ.get('OWM')
+#API_KEY = os.environ.get('OWM')
+API_KEY = '13d1090375aba1e54b0051ff825ab553'
 
 # Create your views here.
 def index(request):

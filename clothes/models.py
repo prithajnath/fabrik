@@ -9,6 +9,5 @@ class Clothing(models.Model):
     image = models.ImageField(upload_to='clothes/')
     owned_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
 
-
     def __str__(self):
         return self.name
