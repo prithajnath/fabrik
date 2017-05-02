@@ -16,7 +16,8 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-venv/
+myvenv/*
+venv/*
 *.json
 *.sqlite3
 *.jpg
