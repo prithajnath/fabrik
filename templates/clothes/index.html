@@ -5,8 +5,9 @@
 {% for clothing in closet %}
 <div class="col-xs-12">
 <h1>{{clothing}}</h1>
-<h1>{{clothing.image.url}}</h1>
+<img src="{{clothing.image.url}}">
 <i>{{clothing.clothing_type}}</i>
+<b>{{clothing.clothing_location}}</b>
 </div class="col-xs-12">
 {% endfor %}
 

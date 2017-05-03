@@ -57,17 +57,14 @@ def add(request):
         if form.is_valid():
             data = form.cleaned_data
             name = data['name']
-            #clothing_type = data['clothing_type']
             image = data['image']
-            #tag = clarify(form.fields['image'].name)
-            #form['clothing_type']=tag
             x = Clothing.objects.create(
                 name = name,
-                #clothing_type = clothing_type,
                 image = image,
                 owned_by = request.user
                 )
             x.clothing_type = tagsBySeason(clarify(x.image.url))
+            x.clothing_location = tagsToTags(clarify(x.image.url), 0)
             x.save()
             form.save()
             return redirect('/')
