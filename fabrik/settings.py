@@ -126,13 +126,12 @@ AWS_REGION = "us-east-1"
 
 # The AWS access key to use
 #AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_ACCESS_KEY_ID = 'AKIAIZX6HHX5GMQURDCA'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 # The AWS secret access key to use.
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
 
 #AWS_S3_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
-AWS_S3_BUCKET_NAME = 'se2fabrik'
-
+AWS_S3_BUCKET_NAME = os.environ['AWS_S3_BUCKET_NAME']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
