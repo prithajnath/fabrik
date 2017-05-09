@@ -28,21 +28,20 @@ def tagsToTags(tag,flag):
     elif(flag == 1):
     #Weather conditions functional tags
         condition = {
-            'snow' : set(['Gloves', 'Women\'s Boots', 'Peacoat', 'Men\'s Hat', 
+            'Snow' : set(['Gloves', 'Women\'s Boots', 'Peacoat', 'Men\'s Hat', 
                             'Men\'s Boots', 'Overalls']),
-            'chilly' : set(['Blazer', 'Leather Jacket', 'Bomber Jacket',
+            'Clouds' : set(['Blazer', 'Leather Jacket', 'Bomber Jacket',
                             'Cardigan', 'Men\'s Dress Shoes', 'Tights', 
                             'Relaxed Pants', 'Denim Jacket', 'Platform Shoes',
                             'Vest', 'Tracksuit', 'Oxfords', 'Loafers', 
                             'Boatshoes', 'Polos']),
-            'sunny' : set(['Capris', 'Cocktail Dress', 'T-Shirt', 'Kimonos', 
+            'Clear' : set(['Capris', 'Cocktail Dress', 'T-Shirt', 'Kimonos', 
                             'Pumps', 'Robe', 'Women\'s Sandals', 
-                            'Spring Jacket', 'Men\'s Sandals']),
-            'cold' : set(['Sneakers', 'Puffy Coat', 'Fleece Jacket', 
+                            'Spring Jacket', 'Men\'s Sandals', 'Socks', 'Wristlet & Clutch']),
+            'Mist' : set(['Sneakers', 'Puffy Coat', 'Fleece Jacket', 
                             'Button Down', 'Skinny Pants', 'Sweatshirt', 
                             'Women\'s Hat', 'Wide Leg Pants', 'Hoodies']),
-            'rain' : set(['Raincoats', 'Umbrella']),
-            'any' : set(['Socks', 'Wristlet & Clutch'])
+            'Rain' : set(['Raincoats', 'Umbrella']),
         }
         #else:
             #return 'ERROR: No Such Clothing Object in database.'

@@ -22,22 +22,6 @@ def clarify(url):
     return clothing_type
 
 #Categorizes a clothing tag to an appropriate weather season.
-def tagsBySeason(name):
-    if tagsToTags(name, 1) == 'snow':
-        return 'winter'
-    elif tagsToTags(name, 1) == 'chilly':
-        return 'fall'
-    elif tagsToTags(name, 1) == 'sunny':
-        return 'summer'
-    elif tagsToTags(name, 1) == 'cold':
-        return 'winter'
-    elif tagsToTags(name, 1) == 'rain':
-        return 'spring'
-    #elif tagsToTags(name, 1) == 'any':
-        
-    else:
-        return 'N/A'
-
 # Create your views here.
 
 @login_required(login_url=LOGIN_REDIRECT_URL)
@@ -58,7 +42,7 @@ def add(request):
                 image = image,
                 owned_by = request.user
                 )
-            x.clothing_type = tagsBySeason(clarify(x.image.url))
+            x.clothing_type = tagsToTags(clarify(x.image.url), 1)
             x.clothing_location = tagsToTags(clarify(x.image.url), 0)
             x.save()
             form.save()
