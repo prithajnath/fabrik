@@ -42,11 +42,15 @@ def add(request):
                 image = image,
                 owned_by = request.user
                 )
-            x.clothing_type = tagsToTags(clarify(x.image.url), 1)
-            x.clothing_location = tagsToTags(clarify(x.image.url), 0)
-            x.save()
-            form.save()
-            return redirect('/')
+            try:
+                x.clothing_type = tagsToTags(clarify(x.image.url), 1)
+                x.clothing_location = tagsToTags(clarify(x.image.url), 0)
+                x.save()
+                form.save()
+                return redirect('/')
+            except IntegrityError:
+                return redirect('/')
+
     else:
         form = ClothingForm()
     return render(request, 'clothes/add.html', {'form' : form})
