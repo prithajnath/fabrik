@@ -20,11 +20,6 @@ def clarify(url):
     x = app.tag_urls(urls=[url], model='e0be3b9d6a454f0493ac3a30784001ff')
     clothing_type = x['outputs'][0]['data']['concepts'][0]['name']
     return clothing_type
-    #x = app.inputs.create_image_from_filename(urlstr)
-    #names = {}
-    #for i in model.predict([x])['outputs'][0]['data']['concepts']:
-    #    names[i['value']]=i['name']
-    #return names[max(names)]
 
 #Categorizes a clothing tag to an appropriate weather season.
 def tagsBySeason(name):
