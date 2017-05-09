@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from pyowm import OWM
 from user.models import Location
+from clothes.models import Clothing
 import requests
 import json
 import os
@@ -27,10 +28,14 @@ def index(request):
         w = observation.get_weather()
         current_temperature = w.get_temperature('fahrenheit')
         current_status = w.get_status()
+        
+        clothes = Clothing.objects.filter(owned_by = request.user.id, clothing_type = current_status)
+        
+        
 
         return render(request, 'weather/index.html', {
             'current_temperature' : round(current_temperature['temp']),
-            'current_status' : current_status
+            'current_status' : current_status, 'clothes' : clothes
             })
     else:
         return render(request, 'weather/index.html')
