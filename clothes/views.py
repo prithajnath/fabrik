@@ -7,6 +7,7 @@ from clarifai.rest import Image as ClImage
 from django.contrib.auth.decorators import login_required
 from fabrik.settings import LOGIN_REDIRECT_URL
 from .tagsToTags import tagsToTags
+from django.db import IntegrityError
 
 #Jason's Clarifai Client ID, Client Secret
 
