@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     -->
-    <!-- Font Awesome 
-    <script src="https://use.fontawesome.com/32612920e8.js"></script>
-    -->
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/weather-icon-animated.css' %}">
     <!--
@@ -28,38 +26,29 @@
   </head>
 
   <body>
-    <div class="col-xs-12">
-      <div class="container-fluid">
-        {% block content %}
-
-        {% endblock %}
-        <footer>
-        <nav class="navbar navbar-light bg-faded navbar-fixed-bottom">
-
-          <a href="/">
-            <button class="btn btn-default">
-              <i class="fa fa-home" aria-hidden="true"></i><br>Home
-            </button>
-          </a>
-          <a href="/closet">
-            <button class="btn btn-default">
-              <i class="fa fa-bookmark" aria-hidden="true"></i><br>Closet
-            </button>
-          </a>
-          <a href="/closet/add">
-            <button class="btn btn-default">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-              <br>Add Clothes
-            </button>
-          </a>
-          <a href="">
-            <button class="btn btn-default">
-              <i class="fa fa-cog" aria-hidden="true"></i><br>Setting
-            </button>
-          </a>
-        </nav>
-        </footer>
-      </div>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Fabrik</span>
     </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Fabrik</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Home</a>
+      <a class="mdl-navigation__link" href="">Closet</a>
+      <a class="mdl-navigation__link" href="">Setting</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+</div>
   </body>
 </html>
