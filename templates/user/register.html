@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
+{% load material_form %}
 
 {% block content %}
 
 <form method="POST">
-  {% csrf_token %}
-  {% bootstrap_form user_form %}
-  {% buttons %}
-      <button type="submit" class="btn btn-primary">
-          Login
-      </button>
-  {% endbuttons %}
+    {% csrf_token %}
+    {% form form=user_form %}{% endform %}
+    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
 </form>
-
 
 {% endblock %}

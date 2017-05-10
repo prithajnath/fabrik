@@ -1,3 +1,9 @@
+''' This function is used to categorize clothing tags based on either where on the
+    body the clothing image can be worn, or the weather contitions the clothing
+    would most likely be worn in, depending on which flag value is specified
+    (0 for body part, 1 for weather conditions). '''
+
+
 def tagsToTags(tag,flag):
     if(flag == 0):
         part = {

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'user',
     'django_s3_storage',
     'bootstrap3',
+    'material',
 ]
 
 MIDDLEWARE = [

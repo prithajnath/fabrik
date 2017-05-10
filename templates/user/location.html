@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
+{% load material_form %}
 
 {% block content %}
 
 <form method="POST">
-  {% csrf_token %}
-  {% bootstrap_form location_form %}
-  {% buttons %}
-      <button type="button" onclick="getLocation()" class="btn btn-success">
+    {% csrf_token %}
+    {% form form=location_form %}{% endform %}
+    <button type="button" onclick="getLocation()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
         Get Location
       </button>
-      <button type="submit" class="btn btn-primary">
-          Update
-      </button>
-  {% endbuttons %}
+    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Update</button>
 </form>
 
 <script>

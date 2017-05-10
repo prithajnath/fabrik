@@ -2,14 +2,36 @@
 
 {% block content %}
 
-<div class="container-fluid">
+
 {% for clothing in closet %}
-<div class="col-xs-4">
-        <img src="{{clothing.image.url}}" class="img-responsive">
-        <i>{{clothing.clothing_type}}</i>
-        <b>{{clothing.clothing_location}}</b>
+<style>
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+
+.mdl-card media {
+  width: 100%;
+}
+</style>
+
+
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+        
+  <div class="mdl-card media">
+         <img src="{{clothing.image.url}}">       
+        </div>
+  <div class="mdl-card__supporting-text">
+        {{clothing.name}}
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Delete
+    </a>
+  </div>
 </div>
+
 {% endfor %}
-</div>
+
 
 {% endblock %}

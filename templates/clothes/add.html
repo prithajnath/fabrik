@@ -1,72 +1,13 @@
 {% extends 'base.html' %}
 
-{% load bootstrap3 %}
+{% load material_form %}
 
 {% block content %}
 
 <form method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-{% bootstrap_form form %}
-{% buttons %}
-    <button type="submit" class="btn btn-primary">
-        Add Clothes
-    </button>
-{% endbuttons %}
-<img id="image" class="img-responsive">
+    {% csrf_token %}
+    {% form form=form %}{% endform %}
+    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Clothes</button>
 </form>
-
-<script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-2.0.9.js"></script>
-
-<script>
-/*
-Using HTML5 File API to show a preview of the user's clothes before they add it
-into the closet
-*/
-
-document.getElementById("id_image").onchange = function () {
-    var reader = new FileReader();
-    var app = new Clarifai.App(
-      'wPXX8nSrRj_A25bqQAdAurGdZdbxzhJWELL9aaQ2',
-      'SRRlIyrXfV7bJkNE7R3naCBPkxw3J-UwqVgcxJhJ'
-    );
-
-    reader.onload = function (e) {
-        // get loaded data and render thumbnail.
-        document.getElementById("image").src = e.target.result;
-        console.log(document.getElementById("image").src);
-        app.models.predict(Clarifai.GENERAL_MODEL, document.getElementById("image").src).then(
-        function(response) {
-          console.log(response);
-        },
-        function(err) {
-          console.error(err);
-        });
-    };
-
-    // read the image file as a data URL.
-    reader.readURL(this.files[0]);
-};
-
-/*
-    var app = n,
-        function(err) {
-          console.error(err);
-        }ew Clarifai.App(
-      'wPXX8nSrRj_A25bqQAdAurGdZdbxzhJWELL9aaQ2',
-      'SRRlIyrXfV7bJkNE7R3naCBPkxw3J-UwqVgcxJhJ'
-    );
-
-    app.models.predict(Clarifai.GENERAL_MODEL, document.getElementById("image").src).then(
-    function(response) {
-      console.log(response);
-    },
-    function(err) {
-      console.error(err);
-    }
-    );  */
-
-</script>
-
-
 
 {% endblock %}
