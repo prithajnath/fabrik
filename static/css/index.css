@@ -31,3 +31,15 @@ i.material-icons {
 .add-clothes {
   margin: 10px;
 }
+
+.mdl-card__title, .mdl-card__supporting-text {
+  margin: 0 auto;
+}
+
+.weather-card {
+  width: 500px;
+  height: 420px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}

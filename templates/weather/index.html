@@ -4,27 +4,28 @@
 
 <!-- If the user is authenticate it shows the main features of the app -->
 {% if user.is_authenticated %}
-   <h1>Hello {{ user.first_name }}!</h1>
+<div class="mdl-card mdl-shadow--2dp weather-card">
+  <div class="mdl-card__title">
+  <h2>Hello {{ user.first_name }}! <br>
+   Weather For: {% now "F jS" %}
+  </h2>
+  </div>
+  
 <!-- Weather information below -->
 
 <!-- {{current_status}} -->
   <div class="weather">
-    <div class="container">
-    <div class="col-xs-6">
     {% if current_status == 'Clear' %}
-    <div class="col-xs-12">
     <div class="icon sunny">
       <div class="sun">
       </div>
     </div>
-  </div>
+
     {% elif current_status == 'Mist' %}
-    <div class="col-xs-12">
     <div class="icon cloudy">
       <div class="cloud"></div>
       <div class="cloud"></div>
     </div>
-  </div>
     {% elif current_status == 'Clouds' %}
     <div class="icon cloudy">
       <div class="cloud"></div>
@@ -38,19 +39,19 @@
       </div>
     </div>
     {% elif current_status == 'Rain' %}
-    <div class="col-xs-12">
     <div class="icon rainy">
       <div class="cloud"></div>
       <div class="rain"></div>
     </div>
-  </div>
     {% endif %}
   </div>
-  <div class="col-xs-6">
-  <h2 class="status">{{current_status}} {{current_temperature}}°F</h2>
-  {{clothes}}
+   <div class="mdl-card__supporting-text">
+    <h2 class="status">{{current_status}} {{current_temperature}}°F</h2>
+  </div>
 </div>
-</div>
+
+{{clothes}}
+
 
 
 <!-- Otherwise show them to login or register -->
