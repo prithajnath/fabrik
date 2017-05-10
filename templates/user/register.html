@@ -4,10 +4,19 @@
 
 {% block content %}
 
-<form method="POST">
+<div class="mdl-card mdl-shadow--2dp register-card">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2>Register</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+   <form method="POST">
     {% csrf_token %}
     {% form form=user_form %}{% endform %}
-    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
-</form>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <button type="submit" name="_submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect right">Register</button>
+  </div>
+  </form>
+</div>
 
 {% endblock %}

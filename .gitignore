@@ -21,3 +21,5 @@ venv/
 *.sqlite3
 *.jpg
 settings.py
+env/
+db.sqlite3

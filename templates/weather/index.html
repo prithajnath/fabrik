@@ -4,7 +4,7 @@
 
 <!-- If the user is authenticate it shows the main features of the app -->
 {% if user.is_authenticated %}
-<div class="mdl-card mdl-shadow--2dp weather-card">
+<div class="mdl-card mdl-shadow--2dp home-card">
   <div class="mdl-card__title">
   <h2>Hello {{ user.first_name }}! <br>
    Weather For: {% now "F jS" %}
@@ -56,22 +56,29 @@
 
 <!-- Otherwise show them to login or register -->
 {% else %}
-  <h2>What is Fabrik?</h2>
-  <p>
-    Fabrik gets the user's current location and the current weather. From there,
-    the app will suggest what the user should wear for the day
-  </p>
-  <p>Please Login or Register to use the app.</p>
-  <a href="/login">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-    Login
-  </button>
-  </a>
-  <a href="/register">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-    Register
-  </button>
-  </a>
+  <div class="mdl-card mdl-shadow--2dp home-card">
+  <div class="mdl-card__title">
+    <h2>What is Fabrik?</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Fabrik is a webapp which suggests what the user should wear for the weather. 
+    Users would take pictures of their clothes to add to their closet. Using Clarifai API,
+    Fabrik can tell what type of clothing the user takes. Then using an alogrithm, Fabrik will 
+    come up with a recommendation of what clothes to wear. 
+  </div>
+  <div class="mdl-card__actions">
+    <a href="/login">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        Login
+      </button>
+    </a>
+    <a href="/register">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Register
+      </button>
+    </a>
+  </div>
+</div>
 {% endif %}
 
 {% endblock %}
