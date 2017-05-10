@@ -66,3 +66,26 @@ i.material-icons {
 .register-card input {
   padding: 14px;
 }
+
+.mdl-layout__header-row h2 {
+  margin: 0 auto;
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 60px;
+  color: white;
+}
+
+.mdl-layout__drawer h2 {
+  color: black;
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 48px;
+}
+
+.setting-card {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.setting-card a {
+  margin: 0 auto;
+}

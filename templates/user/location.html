@@ -4,14 +4,25 @@
 
 {% block content %}
 
-<form method="POST">
+<div class="mdl-grid">
+<div class="mdl-card mdl-shadow--2dp form-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2>Location</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+   <form method="POST">
     {% csrf_token %}
     {% form form=location_form %}{% endform %}
-    <button type="button" onclick="getLocation()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <button type="button" onclick="getLocation()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored left">
         Get Location
-      </button>
-    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Update</button>
-</form>
+    </button>
+    <button type="submit" name="_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent right">Update</button>
+  </div>
+  </form>
+</div>
+</div>
 
 <script>
 var x = document.getElementById("id_latitude");
