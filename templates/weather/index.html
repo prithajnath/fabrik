@@ -4,7 +4,8 @@
 
 <!-- If the user is authenticate it shows the main features of the app -->
 {% if user.is_authenticated %}
-<div class="mdl-card mdl-shadow--2dp home-card">
+<div class="mdl-grid">
+<div class="mdl-card mdl-shadow--2dp home-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
   <h2>Hello {{ user.first_name }}! <br>
    Weather For: {% now "F jS" %}
@@ -49,14 +50,16 @@
     <h2 class="status">{{current_status}} {{current_temperature}}°F</h2>
   </div>
 </div>
-
 {{clothes}}
+
+</div>
 
 
 
 <!-- Otherwise show them to login or register -->
 {% else %}
-  <div class="mdl-card mdl-shadow--2dp home-card">
+<div class="mdl-grid">
+  <div class="mdl-card mdl-shadow--2dp home-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2>What is Fabrik?</h2>
   </div>
@@ -78,6 +81,7 @@
       </button>
     </a>
   </div>
+</div>
 </div>
 {% endif %}
 
