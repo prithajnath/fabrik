@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div class="mdl-grid">
 
 {% for clothing in closet %}
 <style>
@@ -16,7 +17,7 @@
 </style>
 
 
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
+<div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
         
   <div class="mdl-card media">
          <img src="{{clothing.image.url}}">       
@@ -33,5 +34,6 @@
 
 {% endfor %}
 
+</div>
 
 {% endblock %}
