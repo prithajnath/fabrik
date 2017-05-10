@@ -29,13 +29,18 @@ def index(request):
         current_temperature = w.get_temperature('fahrenheit')
         current_status = w.get_status()
         
-        clothes = Clothing.objects.filter(owned_by = request.user.id, clothing_type = current_status)
-        
-        
+        recommendation = [] 
+
+        torso = Clothing.objects.order_by('?').filter(owned_by = request.user.id, clothing_location = 'torso').first()
+        recommendation.append(torso)
+        pants = Clothing.objects.order_by('?').filter(owned_by = request.user.id, clothing_location = 'pants').first()
+        recommendation.append(pants)
+        feet = Clothing.objects.order_by('?').filter(owned_by = request.user.id, clothing_location = 'feet').first()
+        recommendation.append(feet)
 
         return render(request, 'weather/index.html', {
             'current_temperature' : round(current_temperature['temp']),
-            'current_status' : current_status, 'clothes' : clothes
+            'current_status' : current_status, 'recommendation' : recommendation
             })
     else:
         return render(request, 'weather/index.html')

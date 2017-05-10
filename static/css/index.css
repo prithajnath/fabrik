@@ -36,6 +36,11 @@ i.material-icons {
   margin: 0 auto;
 }
 
+.clothes-card {
+  width: 420px;
+  height: 420px;
+}
+
 .home-card {
   width: 500px;
   height: 420px;
@@ -87,5 +92,9 @@ i.material-icons {
 }
 
 .setting-card a {
+  margin: 0 auto;
+}
+
+.mdl-grid {
   margin: 0 auto;
 }

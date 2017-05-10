@@ -50,8 +50,13 @@
     <h2 class="status">{{current_status}} {{current_temperature}}°F</h2>
   </div>
 </div>
-{{clothes}}
-
+<br>
+<div class="mdl-grid">
+{% for clothes in recommendation %}
+<div class="mdl-card mdl-shadow--2dp clothes-card mdl-cell mdl-cell--12-col" style="background-image: url('{{clothes.image.url}}'); background-size: 100%;">
+</div>
+{% endfor %}
+</div>
 </div>
 
 
